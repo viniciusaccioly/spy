@@ -1,13 +1,13 @@
-# Monitor de rede spy
+# SPY - Monitor de rede
 
->	Projeto acadêmico da disciplina desenvolvimento Web.
-## Equipe:
+### Projeto acadêmico da disciplina desenvolvimento Web.
+### Equipe:
 	* Joab
 	* Vinicius 
 
 ## Descrição:
->	 Ferramenta web como objetivo de monitorar ativos de rede, uso de processamento, use de memoria e carga de trabalho utilizando o protocolo snmp e mrtg.
->
+	* Ferramenta web como objetivo de monitorar ativos de rede, uso de processamento, use de memoria e carga de trabalho utilizando o protocolo snmp e mrtg.
+
 ## Repositório:
 [**Repositorio oficial**](https://github.com/viniciusaccioly/spy)<br>
 
@@ -20,4 +20,6 @@
 
 ## Inspirações de Funcionalidade e Telas:
 
-## Descrição das Funcionalidades do Projeto e Contato:
+## Descrição das Funcionalidades do Projeto:
+
+## Contato:
