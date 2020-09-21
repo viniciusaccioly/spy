@@ -1,21 +1,23 @@
 # Monitor de rede spy
 
-## Descrição:
-	- Tem como objetivo fazer o monitoramento de ativos de rede, uso de processamento e carga de trabalho utilizando o protocolo snmp e mrtg.
-
+>	Projeto acadêmico da disciplina desenvolvimento Web.
 ## Equipe:
 	* Joab
 	* Vinicius 
 
+## Descrição:
+>	 Ferramenta web como objetivo de monitorar ativos de rede, uso de processamento, use de memoria e carga de trabalho utilizando o protocolo snmp e mrtg.
+>
 ## Repositório:
 [**Repositorio oficial**](https://github.com/viniciusaccioly/spy)<br>
 
 ## Vídeo de Apresentação:
 [**Video de Apresentação**](http://link-para-o-video)
 
-> No raiz deve existir um arquivo README.md que deve possuir:
->	- a Descrição do projeto,
->	- os Requisitos mínimos
->	- Processo de instalação,
->	- Inspirações de Funcionalidade e Telas, 
->	- Descrição das Funcionalidades do Projeto e Contato;
+## Requisitos mínimos:
+	
+## Processo de instalação:
+
+## Inspirações de Funcionalidade e Telas:
+
+## Descrição das Funcionalidades do Projeto e Contato:
