@@ -3,6 +3,7 @@
 ### Projeto acadêmico da disciplina desenvolvimento Web.
 ### Equipe:
 	* Joab
+	* Mateus Pedro
 	* Vinicius 
 
 ## Descrição:
