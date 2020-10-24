@@ -1,0 +1,11 @@
+### Create Host
+
+### Read Hosts
+
+GET http://localhost:3000/hosts
+
+### Read Host by ID
+
+### Update Host
+
+### Delete Host
