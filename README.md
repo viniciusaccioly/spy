@@ -8,7 +8,7 @@
 
 ## Descrição:
 
-Ferramenta web com objetivo de monitorar ativos de rede, uso de processamento, use de memoria e carga de trabalho utilizando o protocolo snmp e mrtg.
+Ferramenta web com objetivo de monitorar trafego de rede da maquina, uso de processamento, uso de memoria utilizando o protocolo snmp
 
 ## Repositório:
 [**Repositorio oficial**](https://github.com/viniciusaccioly/spy)<br>
