@@ -1,0 +1,18 @@
+body {
+    font-family: sans-serif;
+  }
+  
+h1 {
+    text-align: center;
+    color: white;
+    background-color: skyblue;
+    padding: 1em;
+}
+#Dados, #CpuInfo , #HdInfo, #MemInfo {
+    color: white;
+    background-color: skyblue;
+}
+
+.table {
+    text-align: center;
+}
