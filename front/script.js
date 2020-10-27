@@ -1,6 +1,9 @@
 import pc from './pcs.js'
 const ip=document.querySelector('#pesquisaIP')
 const searchbtn=document.querySelector('#searchbtn')
+const hide=document.getElementById('hide')
+
+hide.style.display = "none"
 
 
 function createDados(){
@@ -40,6 +43,7 @@ function createMem(){
 
 function load(){
     searchbtn.addEventListener('click', () =>{
+        hide.style.display = ""
         createDados(ip)
         createCPU(ip)
         createHD(ip)
