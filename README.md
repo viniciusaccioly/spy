@@ -11,10 +11,10 @@
 Ferramenta web com objetivo de monitorar trafego de rede da maquina, uso de processamento, uso de memoria utilizando o protocolo snmp
 
 ## Repositório:
-[**Repositorio oficial**](https://github.com/viniciusaccioly/spy)<br>
+[**Repositório oficial**](https://github.com/viniciusaccioly/spy)<br>
 
 ## Vídeo de Apresentação:
-[**Video de Apresentação**](https://youtu.be/ZcMAWlk2AtY)<br>
+[**Vídeo de Apresentação**](https://youtu.be/ZcMAWlk2AtY)<br>
 [**Vídeo Front End**](https://youtu.be/Yr7W37x2-70)
 
 ## Requisitos mínimos:
