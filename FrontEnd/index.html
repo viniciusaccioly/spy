@@ -9,10 +9,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500&family=Staatliches&display=swap"
-        rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="src/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
             
     <title>SPY</title>
 </head>
@@ -27,6 +26,7 @@
             </svg></h1>
     </div>
 
+
     <div class="form-group mt-5 text-center">
         <input type="text" id="pesquisaIP" placeholder="IP">
         <button type="submit" class="btn btn-secondary" id="searchbtn" style="background-color: skyblue;">Search <svg
@@ -39,20 +39,24 @@
             </svg></button>
     </div>
 
-    <main class="container-fluid">
-        <div class="row" id="hide">
+    <div class="text-center">
+        <h10 style="color: red;" id="notf"></h10>
+    </div>
+
+    <main class="container"  id="hide">
+        <div class="row mt-5">
             <div class="col">
                 <div class="card">
-                    <div class="card-header px-0" id="Dados">
-                        Dados <i class="fas fa-database"></i>
-                    </div>
-                    <div class="card-body px-0">
+                    <header class="card-header" id="Dados">
+                        DADOS <i class="fas fa-database"></i>
+                    </header>
+                    <div class="card-body">
                         <table class="table table-dados">
                             <thead>
                                 <tr>
-                                    <th>Nome</th>
-                                    <th>Endereço</th>
-                                    <th>Máscara</th>
+                                    <th>Hostname</th>
+                                    <th>OS</th>
+                                    <th>Total Memory</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
@@ -62,55 +66,16 @@
             </div>
             <div class="col">
                 <div class="card">
-                    <div class="card-header px-0" id="CpuInfo">
+                    <header class="card-header px-0" id="CpuInfo">
                         CPU <i class="fas fa-microchip"></i>
-                    </div>
+                    </header>
                     <div class="card-body px-0">
                         <table class="table table-cpu">
                             <thead>
                                 <tr>
                                     <th>Nome</th>
                                     <th>Clock</th>
-                                    <th>Temp</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-header px-0" id="HdInfo">
-                        HD Info <i class="fas fa-hdd"></i>
-                    </div>
-                    <div class="card-body px-0">
-                        <table class="table table-hd">
-                            <thead>
-                                <tr>
-                                    <th>Total</th>
-                                    <th>Em uso</th>
-                                    <th>Temp</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-header px-0" id="MemInfo">
-                        Mem Info
-                        <i class="fas fa-memory"></i> 
-                    </div>
-                    <div class="card-body px-0">
-                        <table class="table table-mem">
-                            <thead>
-                                <tr>
-                                    <th>Mem em uso</th>
-                                    <th>Mem clock</th>
-                                    <th>Temp</th>
+                                    <th>Temperatura</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
@@ -119,11 +84,59 @@
                 </div>
             </div>
         </div>
+        <div class="row mt-5">
+            <div class="col">
+                <div class="card">
+                    <header class="card-header px-0" id="HdInfo">
+                        HD INFO <i class="fas fa-hdd"></i>
+                    </header>
+                    <div class="card-body px-0">
+                        <table class="table table-hd">
+                            <thead>
+                                <tr>
+                                    <th>Total</th>
+                                    <th>Em uso</th>
+                                    <th>Temperatura</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <header class="card-header px-0" id="MemInfo">
+                        NETWORK INFO
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wifi" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.385 6.115a.485.485 0 0 0-.048-.736A12.443 12.443 0 0 0 8 3 12.44 12.44 0 0 0 .663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.717 2.164.204.148.489.13.668-.049z"/>
+                            <path d="M13.229 8.271c.216-.216.194-.578-.063-.745A9.456 9.456 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.577 1.336c.205.132.48.108.652-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.472 6.472 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.408.19.611.09A5.478 5.478 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.611-.091l.015-.015zM9.06 12.44c.196-.196.198-.52-.04-.66A1.99 1.99 0 0 0 8 11.5a1.99 1.99 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .708 0l.707-.707z"/>
+                          </svg>
+                    </header>
+                    <div class="card-body px-0">
+                        <table class="table table-net">
+                            <thead>
+                                <tr>
+                                    <th>Interface</th>
+                                    <th>IP</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
     </main>
 </body>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="src/script.js" type="module"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -133,7 +146,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-<script src="./script.js" type="module"></script>
+
 </body>
 
 </html>

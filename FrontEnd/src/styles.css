@@ -1,0 +1,33 @@
+body {
+  background-color: #fff;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  background-color: skyblue;
+  padding: 1em;
+  font-weight: 900;
+}
+#Dados,
+#CpuInfo,
+#HdInfo,
+#MemInfo {
+  color: white;
+  background-color: skyblue;
+  text-align: center;
+}
+
+.table {
+  text-align: center;
+}
+
+main {
+  font-family: "Pragati Narrow", sans-serif;
+  font-size: 20px;
+}
+
+header {
+  font-size: 25px;
+  font-weight: 600;
+}
