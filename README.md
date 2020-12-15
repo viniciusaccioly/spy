@@ -86,7 +86,7 @@ rocommunity public default -V all
 
 --------- Vscode -------------
 1. Abrir o Vscode 
-2. No terminal do vscode executar o comando para o express ficar em modo de "escuta"
+2. No terminal do vscode executar o comando para o express ficar em modo de "listen"
 ```sh
 node fetch.js
 ```
