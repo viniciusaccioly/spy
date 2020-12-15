@@ -17,59 +17,86 @@ Ferramenta web com objetivo de monitorar trafego de rede da maquina, uso de proc
 [**Vídeo de Apresentação**](https://youtu.be/ZcMAWlk2AtY)<br>
 [**Vídeo Front End**](https://youtu.be/Yr7W37x2-70)
 
-## Requisitos mínimos:
-	
+## Instruções SPY:
+
+### Requisitos:
+	- Sistema operacional Debian ou derivados;
+	- Ter instalado o snmp em todas as máquinas clientes e servidor;
+	- Nas máquinas clientes ter liberado as oids
+	- Visual Studio Code, na máquina que vai requisitar os serviços.
+
 ## Processo de instalação:
----------------- Instalação --------------------------------
 
-	apt install snmp snmpd mrtg lynx apache2
+Copiar o arquivo script.sh para o diretório /usr/local/bin
 
----------------- Configuração Apache2 ---------------------
+Atribuir permissão de execução com o comando
+	# chmod +x /usr/local/bin/script.sh
 
-vim /etc/apache2/sites-available/000-default.conf
+----------- Configurações do Servidor ---------------
 
-Alterar a linha abaixo para:
-	
-	DocumentRoot /var/www/
+1. Instalação do snmp
+	# apt-get install snmp snmpd
+2. Configuração snmpd.conf ( está dentro de /etc/snmp/snmpd.conf)
+Caso você deseje fazer as consultas externamente comente a linha abaixo:
+	#agentAddress udp:127.0.0.1:161
+e descomente a linha abaixo:
+	agentAddress udp:161,udp6:[::1]:161
 
-Reinicia o serviço do apache2:
-	
-	systemctl restart apache2
+3. Reiniciar o serviço snmpd
+	/etc/init.d/snmp restart
 
-Verificar o status:
-	
-	systemctl status apache2
+---------- Configurações PC01 e PC02 ----------------
 
----------------- Configuração do mrtg ---------------------
+1. Instalação do snmp
+	# apt-get install snmp snmpd
+2. Configuração do snmp.conf ( esta dento de /etc/snmp/snmpd.conf)
+Caso você deseje fazer as consultas externamente comente a linha abaixo:
+#agentAddress udp:127.0.0.1:161
+e descomente a linha abaixo:
+	agentAddress udp:161,udp6:[::1]:161
+3. Libera todas OIDs".1"
+	view all included .1
+	comente os outros view
+	rocommunity public default -V all
 
-vim /etc/mrtg.cfg
-Adicionar as linhas abaixo do #Global configuration:
+4. Reiniciar o serviço snmpd
+	/etc/init.d/snmp restart
 
-	Htmldir: /var/www/mrtg
-	Icondir: Images /
-	Refresh: 300
-	Interval: 5
-	Language: portuguese
-	RunAsdaemon: yes
-	WriteExpires: Yes
 
-	# SPY
-	#
-	Target[enp0s3]: 'cat /proc/net/dev | grep enp0s3 | awk -F':' '{print $2}' | awk '{print $1}'; cat /proc/net/dev | grep enp0s3 | awk -F':' '{print $2}' | awk '{print $9}' ; echo -e echo -e
-	MaxBytes[enp0s3]: 1250000
-	Title[enp0s3]: enp0s3 - Utilização enp0s3
-	PageTop[enp0s3]: <h1>Estatistiaca das interfaces<br>Utilização da Interface externa(enp0s3)</h1>
-	options[enp0s3]: growright
+## Testando
 
-Criar a pasta  onde será gerada as informações /var/www/mrtg 
-	
-	mkdir -p /var/www/mrtg
+´´´No servidor teste primeiro a conexão ping, depois realize o seguinte comando:
 
-Setando a linguagem de uso do mrtg
+Obtenha a carga do sistema de 1 minuto no host de destino 
+snmpget -v 1 -c public 192.168.0.2 .1.3.6.1.4.1.2021.10.1.3.1 | cut -f-4 -d”:”´´´
 
-	env LANG=C /usr/bin/mrtg
-## Inspirações de Funcionalidade e Telas:
+
+segue a lista para outros testes
+
+http://www.debianhelp.co.uk/linuxoids.htm
+
+## Referências:
+
+Instalação e configuração em rede snmp
+
+https://blog.remontti.com.br/189
+
+configurando o snmp para liberar todas as OID
+
+https://ti-redes.webnode.com.br/gerenciamento/snmp/snmp-no-linux/
+
+OIDs do Linux para estatísticas de CPU, memória e disco
+
+http://www.debianhelp.co.uk/linuxoids.htm
+
 
 ## Descrição das Funcionalidades do Projeto:
+	Após feita as instalações e configurações nescessarias de forma simples basta digitar o ip da maquina que deseja requisitar as informações e clicar em do seguinte Cenário:
+Servidor 
+	- 192.168.0.1/24
+PC01
+	- 192.168.0.2/24
+PC02
+	- 192.168.0.3/24
 
 ## Contato:
