@@ -84,19 +84,12 @@ rocommunity public default -V all
 /etc/init.d/snmp restart
 ```
 
-
-## Testando
-
-No servidor teste primeiro a conexão ping, depois realize o seguinte comando:
-
+--------- Vscode -------------
+1. Abrir o Vscode 
+2. No terminal do vscode executar o comando para o express ficar em modo de "escuta"
 ```sh
-Obtenha a carga do sistema de 1 minuto no host de destino 
-snmpget -v 1 -c public 192.168.0.2 .1.3.6.1.4.1.2021.10.1.3.1 | cut -f-4 -d”:”
+node fetch.js
 ```
-
-segue a lista para outros testes
-
-http://www.debianhelp.co.uk/linuxoids.htm
 
 ## Referências:
 
@@ -115,7 +108,7 @@ http://www.debianhelp.co.uk/linuxoids.htm
 
 ## Descrição das Funcionalidades do Projeto:
 ```
-	Após feita as instalações e configurações nescessarias de forma simples basta digitar o ip da maquina que deseja requisitar as informações e clicar no botão de pesquisar.
+Após feita as instalações e configurações nescessarias de forma simples basta digitar o ip da maquina que deseja requisitar as informações e clicar no botão de pesquisar.
 ```
 
 ```
