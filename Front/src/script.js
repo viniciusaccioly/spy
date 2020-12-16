@@ -20,7 +20,7 @@ function createCPU(dados1) {
   dados.innerHTML = "";
   var cpu = dados1[5].replace('"',"")
   cpu = cpu.replace('"',"")
-  const dadosLista = `<tr><td>${cpu*100}%</td></tr>`;
+  const dadosLista = `<tr><td>${cpu*10}%</td></tr>`;
   dados.insertAdjacentHTML("beforeend", dadosLista);
 }
 

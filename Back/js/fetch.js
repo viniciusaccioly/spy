@@ -4,14 +4,14 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-const top = require('./lib');
+const requests = require('./lib');
 
 
 const port = 3000;
-  app.get('/ip/:ip', async (req, res) => {
-    const valor = await (req.params.ip)
+app.get('/ip/:ip', async (req, res) => {
+  const valor = await (req.params.ip)
 
-    const topOutput = await top.raw(valor);
+  const topOutput = await requests.getSnmp(valor);
 
   console.log("Exibindo OIDs")
   res.json(topOutput);
